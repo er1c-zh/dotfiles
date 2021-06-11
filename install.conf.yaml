@@ -16,9 +16,12 @@
 - link:
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
+    ~/.vimrc.bundles: vim/vimrc.bundles
+    ~/.ctags: vim/ctags
     ~/.zshrc: zshrc
 
 - shell:
     - [./homebrew.sh, Install homebrew.]
+    - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim, Clone Vundle]
     - [rm -rf ~/tmp/*, Clean tmp files.]
 
