@@ -8,8 +8,10 @@
 - create:
     - ~/bin
     - ~/tmp
+    - ~/opt
 
 - link:
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
+    ~/.zshrc: zshrc
 
