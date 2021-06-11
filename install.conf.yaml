@@ -1,9 +1,12 @@
 - defaults:
     link:
-      relink: true
+        relink: true
+    shell:
+        stdout: true
+        stderr: true
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - ['git submodule update --init --recursive', 'Install submodules.']
 
 - create:
     - ~/bin
@@ -14,4 +17,8 @@
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
     ~/.zshrc: zshrc
+
+- shell:
+    - [./homebrew.sh, Install homebrew.]
+    - [rm -rf ~/tmp/*, Clean tmp files.]
 
