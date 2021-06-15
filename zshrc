@@ -84,3 +84,6 @@ if which rbenv > /dev/null; then
         eval "$(rbenv init -)"; 
 fi
 
+# brew bottle source
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+

@@ -64,5 +64,9 @@ $BREW"/bin/brew" tap homebrew/cask-fonts https://mirrors.tuna.tsinghua.edu.cn/gi
 $BREW"/bin/brew" tap homebrew/cask-drivers https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
 $BREW"/bin/brew" tap homebrew/cask-versions https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-versions.git
 
+log "brew update-reset"
+
+brew update-reset
+
 log "Done"
 
