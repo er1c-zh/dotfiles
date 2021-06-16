@@ -28,7 +28,7 @@ fi
 BREW=$HOME"/opt/homebrew"
 
 log "Checking does brew already installed."
-if [[ `command -v $BREW/opt/homebrew/bin/brew` ]]; then
+if [[ `command -v $BREW/bin/brew` ]]; then
     echo "Homebrew already installed at: "`command -v brew`"."
     exit
 fi

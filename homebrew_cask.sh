@@ -7,6 +7,8 @@ if ! [[ `command -v brew` ]]; then
     exit 1
 fi
 
+HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+
 brew update
 
 # free application
