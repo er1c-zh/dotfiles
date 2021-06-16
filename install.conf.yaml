@@ -21,6 +21,7 @@
     ~/.zshrc: zshrc
 
 - shell:
+    - ['sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"', Install oh-my-zsh]
     - [./homebrew.sh, Install homebrew.]
     - [./homebrew_pkg.sh, Install homebrew package.]
     - [./homebrew_cask.sh, Install homebrew cask.]

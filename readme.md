@@ -16,4 +16,5 @@
     - [ ] linux
 - [ ] go,rust,nvm && npm
 - [ ] tmux config
+- [ ] sshfs and macfuse
 
