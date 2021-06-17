@@ -1,0 +1,3 @@
+patch:
+    reverse_lookup:
+    'recognizer/patterns/reverse_lookup':
