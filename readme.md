@@ -12,7 +12,7 @@
     - [ ] .vimrc
     - [ ] vim extension
 - [ ] squirrel config
-    - [ ] darwin
+    - [x] darwin
     - [ ] linux
 - [ ] go,rust,nvm && npm
 - [ ] tmux config
