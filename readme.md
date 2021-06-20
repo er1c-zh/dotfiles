@@ -8,9 +8,9 @@
 - [ ] package
     - [x] darwin
     - [ ] linux
-- [ ] vim
-    - [ ] .vimrc
-    - [ ] vim extension
+- [x] vim
+    - [x] .vimrc
+    - [x] vim extension
 - [ ] squirrel config
     - [x] darwin
     - [ ] linux

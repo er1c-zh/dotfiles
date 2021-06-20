@@ -25,3 +25,6 @@ brew install --cask jetbrains-toolbox
 brew install --cask eudic
 brew install --cask docker
 
+# powerline fonts
+brew install --cask font-hack-nerd-font
+

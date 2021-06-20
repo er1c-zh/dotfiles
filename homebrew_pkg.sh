@@ -31,6 +31,7 @@ brew install wget
 log "vim"
 # vim
 brew install vim
+brew install ctags
 
 log "development tools"
 # development tools
