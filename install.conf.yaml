@@ -12,6 +12,7 @@
     - ~/bin
     - ~/tmp
     - ~/opt
+    - ~/custom/
 
 - link:
     ~/.vim: vim
@@ -19,6 +20,7 @@
     ~/.vimrc.bundles: vim/vimrc.bundles
     ~/.ctags: vim/ctags
     ~/.zshrc: zshrc
+    ~/.gitconfig: gitconfig
 
 - shell:
     - ['[[ -d ~/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"', Install oh-my-zsh.]

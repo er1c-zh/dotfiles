@@ -3,6 +3,8 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/opt/homebrew/bin:$HOME/opt/homebrew/sbin
 
+source $HOME/custom/path.rc
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME"/.oh-my-zsh"
 
