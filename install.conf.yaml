@@ -21,6 +21,7 @@
     ~/.ctags: vim/ctags
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
+    ~/.iterm2: iterm2
 
 - shell:
     - ['[[ -d ~/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"', Install oh-my-zsh.]
