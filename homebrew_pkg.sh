@@ -25,16 +25,13 @@ brew install openssh
 
 log "base tools"
 # base tools
-brew install grep
-brew install wget
+brew install grep wget libevent utf8proc tmux
 
 log "vim"
 # vim
-brew install vim
-brew install ctags
+brew install lua berkeley-db perl libyaml ruby vim ctags
 
 log "development tools"
 # development tools
-brew install jq
-brew install git
+brew install jq git
 
