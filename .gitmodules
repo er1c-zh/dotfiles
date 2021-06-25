@@ -5,3 +5,6 @@
 [submodule "vim"]
 	path = vim
 	url = git@github.com:er1c-zh/vim.git
+[submodule "dotbot-secret"]
+	path = dotbot-secret
+	url = https://github.com/er1c-zh/dotbot-secret.git
