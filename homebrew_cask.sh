@@ -12,7 +12,6 @@ HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 brew update
 
 # free application
-brew install --cask v2rayu
 brew install --cask iterm2
 brew install --cask iglance
 brew install --cask visual-studio-code
