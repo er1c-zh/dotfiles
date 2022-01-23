@@ -5,18 +5,10 @@
         stdout: true
         stderr: true
 
-- decrypt:
-    -
-        src_path: './encrypt'
-        dst_path: './decrypt'
-
-- encrypt:
-    -
-        src_path: './decrypt'
-        dst_path: './encrypt'
-
 - shell:
     - ['git submodule update --init --recursive', 'Install submodules.']
+    - ['[[ -d ~/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"', Install oh-my-zsh.]
+    - ['mv $HOME/.zshrc $HOME/.zshrc.default', 'Remove default .zshrc.']
 
 - create:
     - ~/bin
@@ -35,13 +27,13 @@
 
 - shell:
     - ['mkdir -p $HOME/custom/path.rc', 'Create $HOME/custom/path.rc']
-    - ['[[ -d ~/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"', Install oh-my-zsh.]
-    - [./homebrew.sh, Install homebrew.]
-    - [./brew_v2ray.sh, Install v2ray.]
+    - [./homebrew.sh, 'Install homebrew.']
+    - ['source $HOME/.zshrc', 'Reload .zshrc.']
     - [./homebrew_pkg.sh, Install homebrew package.]
     - [./homebrew_cask.sh, Install homebrew cask.]
     - ['[[ -d ~/.vim/bundle/Vundle.vim ]] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim', Clone Vundle.]
     - [ vim +PluginInstall +qall, "Install vim plugins."]
+    - ['./npm.sh', "Install npm"]
 
 - link:
     ~/Library/Rime/: 
