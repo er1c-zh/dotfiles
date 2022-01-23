@@ -35,3 +35,5 @@ log "development tools"
 # development tools
 brew install jq git
 
+brew install hugo
+

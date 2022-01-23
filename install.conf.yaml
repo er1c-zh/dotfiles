@@ -33,7 +33,7 @@
     - [./homebrew_cask.sh, Install homebrew cask.]
     - ['[[ -d ~/.vim/bundle/Vundle.vim ]] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim', Clone Vundle.]
     - [ vim +PluginInstall +qall, "Install vim plugins."]
-    - ['./npm.sh', "Install npm"]
+    - ['./npm.sh', "Install nvm and npm."]
 
 - link:
     ~/Library/Rime/: 
