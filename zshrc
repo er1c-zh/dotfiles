@@ -94,3 +94,6 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias video_to_gif='function video_to_gif(){ ffmpeg -i $1 -r 5 -s 1024x576 -pix_fmt rgb8 output.gif && gifsicle -O3 output.gif -o output.gif && say "Video is ready!"};video_to_gif'
+
