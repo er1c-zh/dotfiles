@@ -20,14 +20,16 @@ data = json.loads(sys.argv[1])
 
 col = Collection("/Users/eric/Library/Application Support/Anki2/eric/collection.anki2")
 deck = col.decks.by_name('daily word')
-n = col.new_note(notetype=col.models.by_name('daily word'))
-n['Front'] = data['word']
-n['Back'] = "<ol><li>" + "</li><li>".join(data['meaning']) + "</li></ol>"
-n['Phonetic'] = data['ipa']
-n.tags.append("alfred")
-n.tags.append("collins")
-col.add_note(n, deck_id=DeckId(deck['id']))
-col.save()
+if len(col.find_notes(query="Front:" + data['word'])) == 0:
+    n = col.new_note(notetype=col.models.by_name('daily word'))
+    n['Front'] = data['word']
+    n['Back'] = "<ol><li>" + "</li><li>".join(data['meaning']) + "</li></ol>"
+    n['Phonetic'] = data['ipa']
+    n.tags.append("alfred")
+    n.tags.append("collins")
+    col.add_note(n, deck_id=DeckId(deck['id']))
+    col.save()
+    print(data['word'] + " saved.")
+else:
+    print(data['word'] + " already existed.")
 col.close()
-
-print("done")
