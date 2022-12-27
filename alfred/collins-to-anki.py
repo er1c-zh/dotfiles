@@ -1,5 +1,8 @@
 import json
 import sys
+import traceback
+
+from os.path import expanduser
 
 from anki.collection import Collection
 from anki.decks import DeckId
@@ -18,18 +21,23 @@ data = json.loads(sys.argv[1])
 #     print(k, "=", n[k])
 # print(col.get_note(NoteId(1671540828784)).note_type())
 
-col = Collection("/Users/eric/Library/Application Support/Anki2/eric/collection.anki2")
-deck = col.decks.by_name('daily word')
-if len(col.find_notes(query="Front:" + data['word'])) == 0:
-    n = col.new_note(notetype=col.models.by_name('daily word'))
-    n['Front'] = data['word']
-    n['Back'] = "<ol><li>" + "</li><li>".join(data['meaning']) + "</li></ol>"
-    n['Phonetic'] = data['ipa']
-    n.tags.append("alfred")
-    n.tags.append("collins")
-    col.add_note(n, deck_id=DeckId(deck['id']))
-    col.save()
-    print(data['word'] + " saved.")
-else:
-    print(data['word'] + " already existed.")
-col.close()
+try:
+    home = expanduser("~")
+    col = Collection(home + "/Library/Application Support/Anki2/eric/collection.anki2")
+    deck = col.decks.by_name('daily word')
+    if len(col.find_notes(query="Front:" + data['word'])) == 0:
+        n = col.new_note(notetype=col.models.by_name('daily word'))
+        n['Front'] = data['word']
+        n['Back'] = "<ol><li>" + "</li><li>".join(data['meaning']) + "</li></ol>"
+        n['Phonetic'] = data['ipa']
+        n.tags.append("alfred")
+        n.tags.append("collins")
+        col.add_note(n, deck_id=DeckId(deck['id']))
+        col.save()
+        print(data['word'] + " saved.")
+    else:
+        print(data['word'] + " already existed.")
+        col.close()
+except BaseException as error:
+    print(traceback.format_exc())
+
