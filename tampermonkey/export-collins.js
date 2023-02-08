@@ -75,12 +75,34 @@ function export_as_json(dic, btn) {
         meaning.push(mean);
     });
     let j = JSON.stringify({
-        "word": word,
-        "ipa" : ipa,
-        "meaning": meaning,
+        "action": "addNote",
+        "version": 6,
+        "params": {
+            "note": {
+                "deckName": "daily word",
+                "modelName": "daily word",
+                "fields": {
+                    "Front": word,
+                    "Back": "<ol><li>" + meaning.join("</li><li>") + "</li></ol>",
+                    "Phonetic": ipa,
+                },
+                "options": {
+                    "allowDuplicate": false,
+                    "duplicateScope": "deck",
+                    "duplicateScopeOptions": {
+                        "deckName": "daily word",
+                        "checkChildren": false,
+                        "checkAllModels": false
+                    }
+                },
+                "tags": [
+                    "alfred",
+                    "collins"
+                ]
+            }
+        }
     });
     elog(j);
     GM_setClipboard(j);
     btn.textContent = "done";
 }
-
