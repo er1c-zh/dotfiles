@@ -1,8 +1,0 @@
-patch:
-    # 禁用`的笔画输入
-    reverse_lookup:
-    'recognizer/patterns/reverse_lookup':
-
-    # 禁用shift切换英文输入
-    'engine/processors/@0':
-    'engine/segmentors/@0':
