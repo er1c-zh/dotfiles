@@ -135,7 +135,7 @@ reverse_lookup:
     - xform/([nl])v/$1ü/
 
 punctuator:
-  import_preset: default
+  import_preset: symbols
 
 key_binder:
   import_preset: default
@@ -143,4 +143,5 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-    reverse_lookup: "`[a-z]*'?$"
+    # reverse_lookup: "`[a-z]*'?$"
+    reverse_lookup: 
