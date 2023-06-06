@@ -1,3 +1,4 @@
 **/*.swp
 decrypt
 **/.idea
+.DS_Store
