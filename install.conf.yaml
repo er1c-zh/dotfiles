@@ -40,7 +40,7 @@
 - link:
     ~/Library/Rime/: 
         glob: true
-        path: rime/*.custom.yaml
+        path: rime/*.yaml
 
 - shell:
     - ['/Library/Input\ Methods/Squirrel.app/Contents/MacOS/Squirrel --reload', Reload Squirrel config.]
