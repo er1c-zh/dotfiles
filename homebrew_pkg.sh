@@ -40,3 +40,5 @@ brew install jq git
 
 brew install hugo
 
+brew install stats
+

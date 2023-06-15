@@ -27,3 +27,6 @@ brew install --cask docker
 # powerline fonts
 brew install --cask font-hack-nerd-font
 
+# karabiner-elements
+brew install --cask karabiner-elements
+
