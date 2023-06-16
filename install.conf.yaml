@@ -14,7 +14,9 @@
     - ~/bin
     - ~/tmp
     - ~/opt
-    - ~/custom/
+    - ~/projects
+    - ~/custom
+    - ~/Library/Rime
 
 - link:
     ~/.vim: vim
