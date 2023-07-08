@@ -9,6 +9,7 @@
     - ['git submodule update --init --recursive', 'Install submodules.']
     - ['[[ -d ~/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"', Install oh-my-zsh.]
     - ['mv $HOME/.zshrc $HOME/.zshrc.default', 'Remove default .zshrc.']
+    - ['pip3 install pydes', 'Install pyDes which is dependency of encrypt/decrypt plugin.']
 
 - create:
     - ~/bin
@@ -26,6 +27,7 @@
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.iterm2: iterm2
+    ~/.secret: decrypt
 
 - shell:
     - ['mkdir -p $HOME/custom/path.rc', 'Create $HOME/custom/path.rc']
@@ -46,4 +48,10 @@
 
 - shell:
     - ['/Library/Input\ Methods/Squirrel.app/Contents/MacOS/Squirrel --reload', Reload Squirrel config.]
+
+- decrypt:
+  - ['./encrypt', './decrypt']
+
+- encrypt:
+  - ['./decrypt', './encrypt']
 

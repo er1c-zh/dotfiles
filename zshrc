@@ -5,6 +5,7 @@ export PATH=$PATH:$HOME/opt/homebrew/sbin
 export PATH=$PATH:$HOME/opt/go/bin
 
 source $HOME/custom/path.rc
+source $HOME/.secret/openai_api_key.zshrc
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME"/.oh-my-zsh"
