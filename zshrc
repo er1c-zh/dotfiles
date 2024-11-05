@@ -3,6 +3,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/opt/homebrew/bin
 export PATH=$PATH:$HOME/opt/homebrew/sbin
 export PATH=$PATH:$HOME/opt/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.tools/bin
 
 source $HOME/custom/path.rc
