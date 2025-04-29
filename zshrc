@@ -12,6 +12,7 @@ export PATH=$PATH:$HOME/opt/homebrew/sbin
 export PATH=$PATH:$HOME/opt/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.tools/bin
+export PATH="$HOME/.local/bin:$PATH"
 
 source $HOME/custom/path.rc
 source $HOME/.secret/openai_api_key.zshrc
@@ -89,7 +90,7 @@ zplug load --verbose
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z sudo)
+plugins=(git z sudo kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,3 +140,8 @@ alias video_to_gif='function video_to_gif(){ ffmpeg -i $1 -r 5 -s 1024x576 -pix_
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# k3s
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+alias kc='sudo -E kubectl'
+alias kctp='sudo -E kubectl run debug --image=busybox:1.28 -it --rm --restart=Never -- sh'
