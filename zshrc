@@ -51,12 +51,38 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+####################################
+####################################
+# plugins prepare
+####################################
+source ~/.zplug/init.zsh
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "junegunn/fzf"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+bindkey '^n' autosuggest-accept
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", as: plugin
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+####################################
+####################################
+
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
+plugins=(git z sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,3 +127,5 @@ export NVM_DIR="$HOME/.nvm"
 
 alias video_to_gif='function video_to_gif(){ ffmpeg -i $1 -r 5 -s 1024x576 -pix_fmt rgb8 output.gif && gifsicle -O3 output.gif -o output.gif && say "Video is ready!"};video_to_gif'
 
+
+. "$HOME/.local/bin/env"

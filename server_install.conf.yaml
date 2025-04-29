@@ -16,7 +16,6 @@
     - ~/opt
     - ~/projects
     - ~/custom
-    - ~/Library/Rime
 
 - link:
     ~/.vim: vim
@@ -25,30 +24,17 @@
     ~/.ctags: vim/ctags
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
-    ~/.iterm2: iterm2
     ~/.secret: decrypt
     ~/.tools: tools
 
 - shell:
     - ['mkdir -p $HOME/custom/path.rc', 'Create $HOME/custom/path.rc']
-    - [./homebrew.sh, 'Install homebrew.']
     - ['source $HOME/.zshrc', 'Reload .zshrc.']
-    - [./homebrew_pkg.sh, Install homebrew package.]
-    - [./homebrew_cask.sh, Install homebrew cask.]
     - ['[[ -d ~/.vim/bundle/Vundle.vim ]] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim', Clone Vundle.]
     - [ vim +PluginInstall +qall, "Install vim plugins."]
     - ['reset', "Reset shell."]
     - ['./npm.sh', "Install nvm and npm."]
-    - ['defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false', "Enable repeat input when hold the key in vscode."]
     - ['curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh', "Install zplug, a zsh plugin manager."]
-
-- link:
-    ~/Library/Rime/: 
-        glob: true
-        path: rime/*.yaml
-
-- shell:
-    - ['/Library/Input\ Methods/Squirrel.app/Contents/MacOS/Squirrel --reload', Reload Squirrel config.]
 
 - decrypt:
   - ['./encrypt', './decrypt']
