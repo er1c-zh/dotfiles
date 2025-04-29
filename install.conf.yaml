@@ -24,6 +24,7 @@
     ~/.vimrc.bundles: vim/vimrc.bundles
     ~/.ctags: vim/ctags
     ~/.zshrc: zshrc
+    ~/.p10k.zsh: p10k.zsh
     ~/.gitconfig: gitconfig
     ~/.iterm2: iterm2
     ~/.secret: decrypt
