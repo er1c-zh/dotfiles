@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.cargo/bin
@@ -64,13 +64,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # plugins prepare
 ####################################
 source ~/.zplug/init.zsh
+zplug "er1c-zh/vivi", depth:1, as:plugin, use:"vivi.plugin.zsh", if:"[[ $OSTYPE == *darwin* ]]"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
-zplug "junegunn/fzf"
+zplug "junegunn/fzf", as:command, hook-build:"./install --all"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 bindkey '^n' autosuggest-accept
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", as: plugin
+zplug "zsh-users/zsh-history-substring-search", as:plugin
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -145,3 +146,5 @@ alias video_to_gif='function video_to_gif(){ ffmpeg -i $1 -r 5 -s 1024x576 -pix_
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 alias kc='sudo -E kubectl'
 alias kctp='sudo -E kubectl run debug --image=busybox:1.28 -it --rm --restart=Never -- sh'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
